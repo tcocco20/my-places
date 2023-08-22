@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 import PlaceItem from "./PlaceItem";
-import { Link } from "expo-router";
+import { Colors } from "../../constants/colors";
 
 const PlacesList = ({ places }) => {
   if (!places || places.length === 0) {
@@ -10,7 +10,6 @@ const PlacesList = ({ places }) => {
         <Text style={styles.fallbackText}>
           No places found. Maybe add some!
         </Text>
-        <Link href="/AddPlace">Add Place</Link>
       </View>
     );
   }
@@ -34,5 +33,6 @@ const styles = StyleSheet.create({
   },
   fallbackText: {
     fontSize: 16,
+    color: Colors.primary200,
   },
 });
