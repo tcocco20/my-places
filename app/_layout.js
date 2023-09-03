@@ -38,6 +38,7 @@ const Layout = () => {
           title: "Add A New Place",
         }}
       />
+      <Stack.Screen name="Map" />
     </Stack>
   );
 };

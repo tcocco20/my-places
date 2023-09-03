@@ -8,9 +8,11 @@ import React, { useState } from "react";
 import OutlinedButton from "../UI/OutlinedButton";
 import { Colors } from "../../constants/colors";
 import { getMapPreview } from "../../util/location";
+import { useNavigation } from "expo-router";
 
 const LocationPicker = () => {
   const [pickedLocation, setPickedLocation] = useState(null);
+  const navigation = useNavigation();
 
   const [locationPermissionInformation, requestPermission] =
     useForegroundPermissions();
@@ -49,7 +51,9 @@ const LocationPicker = () => {
     console.log(location);
   };
 
-  const pickOnMapHandler = () => {};
+  const pickOnMapHandler = () => {
+    navigation.navigate("Map");
+  };
 
   let locationPreview = <Text>No location picked yet.</Text>;
 
